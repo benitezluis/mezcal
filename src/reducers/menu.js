@@ -7,7 +7,6 @@ export default (state = {
         ...state,
         active: action.payload
       }
-      break;
     default:
       return state
   }

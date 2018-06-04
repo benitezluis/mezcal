@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Dropdown, Menu, Icon, Label } from 'semantic-ui-react';
+import { Dropdown, Menu, Label } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions/menu';
-import Img from '../assets/user.jpg';
 
 class MenuApp extends Component {
 
@@ -19,8 +18,6 @@ class MenuApp extends Component {
 
   render() {
     const { active } = this.props;
-
-    console.log('estas son mis props', this.props);
 
     return (
       <Menu borderless>
@@ -39,7 +36,7 @@ class MenuApp extends Component {
         <Menu.Menu position="right">
           <Menu.Item>
             <Label as="a">
-              Luis Benitez
+              Usuario
             </Label>
           </Menu.Item>
 
