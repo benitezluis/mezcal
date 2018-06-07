@@ -3,6 +3,7 @@ import { Input, Button, Form } from 'semantic-ui-react';
 import { withRouter } from 'react-router';
 import Auth from '../../config/session';
 import Request from '../../api/request';
+import NotificationSystem from 'react-notification-system';
 
 class Login extends Component {
 
@@ -40,6 +41,10 @@ class Login extends Component {
       }
     })
     .catch(error => {
+      this.refs.notificationSystem.addNotification({
+        message: 'Usuario no válido, por favor verifique que los datos sean correctos',
+        level: 'warning'
+      });
       console.log('Ocurrio un error', error);
     });
   }
@@ -82,6 +87,7 @@ class Login extends Component {
             </Form>
           </div>
         </div>
+        <NotificationSystem ref="notificationSystem" />
       </Fragment>
     );
   }
